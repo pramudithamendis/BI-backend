@@ -1,0 +1,40 @@
+{
+  "Cards": [
+    {
+      "table_name": "total_deposits_weekly",
+      "metric_name": ["This Week Deposits Amounts", "This Week Transactions"],
+      "record_count": 1,
+      "columns": ["week_start_date", "week_end_date", "total_completed_amount", "total_transactions"],
+      "order_by_column": "Week_Start_Date",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_withdraw_weekly",
+      "metric_name": ["This Week withdraw Amounts", "This Week Transactions"],
+      "record_count": 1,
+      "columns": ["week_start_date", "week_end_date", "total_completed_amount", "total_transactions"],
+      "order_by_column": "Week_Start_Date",
+      "order_by": "desc"
+    }
+  ],
+  "Tables": [
+    {
+      "table_name": "wallet_balance_cumulative",
+      "metric_name": ["Top 50 Wallet Balance Holders"],
+      "record_count": 50,
+      "columns": ["first_name", "wallet_address", "total_balance", "total_hold"],
+      "order_by_column": "total_balance",
+      "order_by": "desc"
+    }
+  ],
+  "Charts": [
+    {
+      "table_name": "wallet_balance_cumulative",
+      "metric_name": ["Top 50 Wallet Balance Holders"],
+      "record_count": 50,
+      "columns": ["first_name", "wallet_address", "total_balance", "total_hold"],
+      "order_by_column": "total_balance",
+      "order_by": "desc"
+    }
+  ]
+}
