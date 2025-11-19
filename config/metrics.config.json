@@ -9,11 +9,163 @@
       "order_by": "desc"
     },
     {
-      "table_name": "total_withdraw_weekly",
-      "metric_name": ["This Week withdraw Amounts", "This Week Transactions"],
+      "table_name": "total_users_daily",
+      "metric_name": ["Today users"],
+      "record_count": 1,
+      "columns": ["date", "value"],
+      "order_by_column": "date",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_users_weekly",
+      "metric_name": ["This week users"],
+      "record_count": 1,
+      "columns": ["week", "value"],
+      "order_by_column": "week",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_users_monthly",
+      "metric_name": ["This month users"],
+      "record_count": 1,
+      "columns": ["month", "value"],
+      "order_by_column": "month",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_users_cumulative",
+      "metric_name": ["Total users"],
+      "record_count": 1,
+      "columns": ["date", "value"],
+      "order_by_column": "date",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_daily",
+      "metric_name": ["Today deposit amounts", "Today transactions"],
+      "record_count": 1,
+      "columns": ["date_", "total_completed_amount", "total_transactions"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_weekly",
+      "metric_name": ["This week deposit amount", "This week transaction amount"],
       "record_count": 1,
       "columns": ["week_start_date", "week_end_date", "total_completed_amount", "total_transactions"],
-      "order_by_column": "Week_Start_Date",
+      "order_by_column": "week_start_date",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_monthly",
+      "metric_name": ["This month deposit amount", "This month transaction amount"],
+      "record_count": 1,
+      "columns": ["month_", "total_completed_amount", "total_transactions"],
+      "order_by_column": "month_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_cumulative",
+      "metric_name": ["Total deposit amount", "Total transaction amount"],
+      "record_count": 1,
+      "columns": ["date_", "total_completed_amount", "total_transactions"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_fiat_daily",
+      "metric_name": ["Today deposit fiat amount", "Today deposit fiat transaction"],
+      "record_count": 1,
+      "columns": ["date_", "total_completed_amount", "total_transactions"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_fiat_weekly",
+      "metric_name": ["This week deposit fiat amount", "This week deposit fiat transaction"],
+      "record_count": 1,
+      "columns": ["year_week", "week_start_date", "week_end_date", "total_completed_amount", "total_transactions"],
+      "order_by_column": "year_week",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_fiat_monthly",
+      "metric_name": ["This month deposit fiat amount", "This month deposit fiat transaction"],
+      "record_count": 1,
+      "columns": ["month_", "total_completed_amount", "total_transactions"],
+      "order_by_column": "month_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_fiat_cumulative",
+      "metric_name": ["Total deposit fiat amount", "Total deposit fiat transaction"],
+      "record_count": 1,
+      "columns": ["date_", "total_completed_amount", "total_transactions"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_crypto_daily",
+      "metric_name": ["Today deposit crypto amount", "Today deposit crypto transaction"],
+      "record_count": 1,
+      "columns": ["date_", "total_completed_amount", "total_transactions"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_crypto_weekly",
+      "metric_name": ["This week deposit crypto amount", "This week deposit crypto transaction"],
+      "record_count": 1,
+      "columns": ["year_week", "week_start_date", "week_end_date", "total_completed_amount", "total_transactions"],
+      "order_by_column": "year_week",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_crypto_monthly",
+      "metric_name": ["This month deposit crypto amount", "This month deposit crypto transaction"],
+      "record_count": 1,
+      "columns": ["month_", "total_completed_amount", "total_transactions"],
+      "order_by_column": "month_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_crypto_cumulative",
+      "metric_name": ["Total deposit crypto amount", "Total deposit crypto transaction"],
+      "record_count": 1,
+      "columns": ["date_", "total_completed_amount", "total_transactions"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_userwise_fiat_daily",
+      "metric_name": ["Today deposit userwise fiat amount", "Today deposit userwise fiat transaction"],
+      "record_count": 1,
+      "columns": ["user_id", "email", "first_name", "last_name", "date_", "total_completed_amount", "total_transactions"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_userwise_fiat_weekly",
+      "metric_name": ["This week deposit userwise fiat amount", "This week deposit userwise fiat transaction"],
+      "record_count": 1,
+      "columns": ["user_id", "email", "first_name", "last_name", "year", "week_number", "week_label", "total_completed_amount", "total_transactions"],
+      "order_by_column": "year_week",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_userwise_fiat_monthly",
+      "metric_name": ["This month deposit userwise fiat amount", "This month deposit userwise fiat transaction"],
+      "record_count": 1,
+      "columns": ["user_id", "email", "first_name", "last_name", "month_", "total_completed_amount", "total_transactions"],
+      "order_by_column": "month_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_deposits_userwise_fiat_cumulative",
+      "metric_name": ["Total deposit userwise fiat amount", "Total deposit userwise fiat transaction"],
+      "record_count": 1,
+      "columns": ["date_", "user_id", "email", "first_name", "last_name", "total_completed_amount", "total_transactions"],
+      "order_by_column": "date_",
       "order_by": "desc"
     }
   ],
