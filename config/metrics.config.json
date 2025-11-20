@@ -265,7 +265,6 @@
       "order_by_column": "date_",
       "order_by": "desc"
     },
-    //
     {
       "table_name": "total_withdrawal_crypto_daily",
       "metric_name": ["Today withdrawal crypto amount", "Today withdrawal crypto transaction"],
@@ -298,7 +297,6 @@
       "order_by_column": "date_",
       "order_by": "desc"
     },
-    //
     {
       "table_name": "total_withdrawals_daily",
       "metric_name": ["Today withdrawal amounts", "Today withdrawal transactions"],
@@ -331,7 +329,6 @@
       "order_by_column": "date_",
       "order_by": "desc"
     },
-    //
     {
       "table_name": "total_withdrawals_userwise_fiat_daily",
       "metric_name": ["Today withdrawal userwise fiat amounts", "Today withdrawal userwise fiat transactions"],
@@ -345,7 +342,7 @@
       "metric_name": ["This week withdrawal amount", "This week withdrawal transaction amount"],
       "record_count": 1,
       "columns": ["user_id", "email", "first_name", "last_name", "year", "week_number", "week_label", "total_completed_amount", "total_transactions"],
-      "order_by_column": "year_week",
+      "order_by_column": "week_number",
       "order_by": "desc"
     },
     {
