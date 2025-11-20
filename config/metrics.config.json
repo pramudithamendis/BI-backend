@@ -634,6 +634,14 @@
   ],
   "Charts": [
     {
+      "table_name": "wallet_balance_cumulative",
+      "metric_name": ["Top 50 Wallet Balance Holdersss"],
+      "record_count": 50,
+      "columns": ["email", "first_name", "last_name", "date_", "total_balance", "total_hold", "available_balance"],
+      "order_by_column": "total_balance",
+      "order_by": "desc",
+      "is_cumulative": 1,
+      "distinct_col": "email",
       "chart_type": "pie chart"
     }
   ]

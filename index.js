@@ -156,7 +156,12 @@ app.get("/api/charts", async (req, res) => {
     if (table_name == undefined) {
       //means we need all
       for (const card of config.Charts) {
-        const sql = buildQuery(card);
+        let sql = "";
+        if (card.is_cumulative == 1) {
+          sql = buildQuery_cumulative(card);
+        } else {
+          sql = buildQuery(card);
+        }
         const [rows] = await pool.query(sql);
 
         results.push({
@@ -170,7 +175,12 @@ app.get("/api/charts", async (req, res) => {
       //means we need specific table
       for (const card of config.Charts) {
         if (card.table_name == table_name) {
-          const sql = buildQuery(card);
+          let sql = "";
+          if (card.is_cumulative == 1) {
+            sql = buildQuery_cumulative(card);
+          } else {
+            sql = buildQuery(card);
+          }
           const [rows] = await pool.query(sql);
 
           results.push({
