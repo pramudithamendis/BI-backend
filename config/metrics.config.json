@@ -493,7 +493,6 @@
       "order_by_column": "date_",
       "order_by": "desc"
     },
-    ,
     {
       "table_name": "total_game_play_comission_cumulative",
       "metric_name": ["Total game play commission"],
@@ -523,6 +522,71 @@
       "metric_name": ["This month game play commission"],
       "record_count": 1,
       "columns": ["month_", "base_amount_100pct", "developer_share_50pct", "tax_18pct", "remainder_you_keep_32pct"],
+      "order_by_column": "month_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "02_AI_matches_cumulative",
+      "metric_name": ["Total 02 AI matches"],
+      "record_count": 1,
+      "columns": ["date_", "total_ai_matches", "player_wins", "player_losses", "spend_amount_usd", "report_date"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "02_AI_matches_daily",
+      "metric_name": ["Today 02 AI matches"],
+      "record_count": 1,
+      "columns": ["date_", "total_ai_matches", "player_wins", "player_losses", "spend_amount_usd"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "02_AI_matches_weekly",
+      "metric_name": ["This week 02 AI matches"],
+      "record_count": 1,
+      "columns": ["week_label", "total_ai_matches", "player_wins", "player_losses", "spend_amount_usd"],
+      "order_by_column": "week_label",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "02_AI_matches_monthly",
+      "metric_name": ["This month 02 AI matches"],
+      "record_count": 1,
+      "columns": ["month_", "total_ai_matches", "player_wins", "player_losses", "spend_amount_usd"],
+      "order_by_column": "month_",
+      "order_by": "desc"
+    },
+    ,
+    {
+      "table_name": "old_AI_matches_cumulative",
+      "metric_name": ["Total old AI matches"],
+      "record_count": 1,
+      "columns": ["date_", "total_ai_matches", "total_player_wins", "total_player_losses", "total_spent_in_usd"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "old_AI_matches_daily",
+      "metric_name": ["Today old AI matches"],
+      "record_count": 1,
+      "columns": ["match_date", "total_ai_matches", "total_player_wins", "total_player_losses", "total_spent_in_usd"],
+      "order_by_column": "match_date",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "old_AI_matches_weekly",
+      "metric_name": ["This week old AI matches"],
+      "record_count": 1,
+      "columns": ["year_", "week_number", "total_ai_matches", "total_player_wins", "total_player_losses", "total_spent_in_usd"],
+      "order_by_column": "week_number",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "old_AI_matches_monthly",
+      "metric_name": ["This month old AI matches"],
+      "record_count": 1,
+      "columns": ["year_", "month_number", "month_name", "total_ai_matches", "total_player_wins", "total_player_losses", "total_spent_in_usd"],
       "order_by_column": "month_",
       "order_by": "desc"
     }
