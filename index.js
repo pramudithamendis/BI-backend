@@ -35,71 +35,72 @@ app.get("/api/cards", async (req, res) => {
       //means we need all
       for (const card of config.Cards) {
         const sql = buildQuery(card);
+        let rows = "hi";
         // const [rows] = await pool.query(sql);
-        const rows = [
-          {
-            week_start_date: "2025-11-17",
-            week_end_date: "2025-11-24",
-            total_amount: 15430.75,
-            transactions_count: 182,
-          },
-          {
-            week_start_date: "2025-11-17",
-            week_end_date: "2025-11-24",
-            total_amount: 15430.75,
-            transactions_count: 182,
-          },
+        // const rows = [
+        //   {
+        //     week_start_date: "2025-11-17",
+        //     week_end_date: "2025-11-24",
+        //     total_amount: 15430.75,
+        //     transactions_count: 182,
+        //   },
+        //   {
+        //     week_start_date: "2025-11-17",
+        //     week_end_date: "2025-11-24",
+        //     total_amount: 15430.75,
+        //     transactions_count: 182,
+        //   },
 
-          // ---- Added 8 more ----
-          {
-            week_start_date: "2025-11-24",
-            week_end_date: "2025-12-01",
-            total_amount: 16780.4,
-            transactions_count: 195,
-          },
-          {
-            week_start_date: "2025-12-01",
-            week_end_date: "2025-12-08",
-            total_amount: 14250.1,
-            transactions_count: 162,
-          },
-          {
-            week_start_date: "2025-12-08",
-            week_end_date: "2025-12-15",
-            total_amount: 18930.55,
-            transactions_count: 214,
-          },
-          {
-            week_start_date: "2025-12-15",
-            week_end_date: "2025-12-22",
-            total_amount: 17560.2,
-            transactions_count: 201,
-          },
-          {
-            week_start_date: "2025-12-22",
-            week_end_date: "2025-12-29",
-            total_amount: 16040.0,
-            transactions_count: 187,
-          },
-          {
-            week_start_date: "2025-12-29",
-            week_end_date: "2026-01-05",
-            total_amount: 19320.85,
-            transactions_count: 223,
-          },
-          {
-            week_start_date: "2026-01-05",
-            week_end_date: "2026-01-12",
-            total_amount: 17810.6,
-            transactions_count: 198,
-          },
-          {
-            week_start_date: "2026-01-12",
-            week_end_date: "2026-01-19",
-            total_amount: 20450.72,
-            transactions_count: 241,
-          },
-        ];
+        //   // ---- Added 8 more ----
+        //   {
+        //     week_start_date: "2025-11-24",
+        //     week_end_date: "2025-12-01",
+        //     total_amount: 16780.4,
+        //     transactions_count: 195,
+        //   },
+        //   {
+        //     week_start_date: "2025-12-01",
+        //     week_end_date: "2025-12-08",
+        //     total_amount: 14250.1,
+        //     transactions_count: 162,
+        //   },
+        //   {
+        //     week_start_date: "2025-12-08",
+        //     week_end_date: "2025-12-15",
+        //     total_amount: 18930.55,
+        //     transactions_count: 214,
+        //   },
+        //   {
+        //     week_start_date: "2025-12-15",
+        //     week_end_date: "2025-12-22",
+        //     total_amount: 17560.2,
+        //     transactions_count: 201,
+        //   },
+        //   {
+        //     week_start_date: "2025-12-22",
+        //     week_end_date: "2025-12-29",
+        //     total_amount: 16040.0,
+        //     transactions_count: 187,
+        //   },
+        //   {
+        //     week_start_date: "2025-12-29",
+        //     week_end_date: "2026-01-05",
+        //     total_amount: 19320.85,
+        //     transactions_count: 223,
+        //   },
+        //   {
+        //     week_start_date: "2026-01-05",
+        //     week_end_date: "2026-01-12",
+        //     total_amount: 17810.6,
+        //     transactions_count: 198,
+        //   },
+        //   {
+        //     week_start_date: "2026-01-12",
+        //     week_end_date: "2026-01-19",
+        //     total_amount: 20450.72,
+        //     transactions_count: 241,
+        //   },
+        // ];
 
         results.push({
           metric_name: card.metric_name,
@@ -113,15 +114,16 @@ app.get("/api/cards", async (req, res) => {
       for (const card of config.Cards) {
         if (card.table_name == table_name) {
           const sql = buildQuery(card);
+          let rows = "hi";
           // const [rows] = await pool.query(sql);
-          const [rows] = [
-            {
-              week_start_date: "2025-11-17",
-              week_end_date: "2025-11-24",
-              total_amount: 15430.75,
-              transactions_count: 182,
-            },
-          ];
+          // const [rows] = [
+          //   {
+          //     week_start_date: "2025-11-17",
+          //     week_end_date: "2025-11-24",
+          //     total_amount: 15430.75,
+          //     transactions_count: 182,
+          //   },
+          // ];
           results.push({
             metric_name: card.metric_name,
             sql,
