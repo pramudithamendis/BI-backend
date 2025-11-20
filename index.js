@@ -4,11 +4,11 @@ const app = express();
 import mysql from "mysql2/promise";
 
 const pool = mysql.createPool({
-  host: "52.221.131.12",
-  port: 3306,
-  user: "pramuditha",
-  password: "Pramuditha@20",
+  host: "127.0.0.1",
+  user: "root",
+  password: "password", // your MySQL password
   database: "gaming_app_bi",
+  port: 3306,
   connectionLimit: 10,
 });
 

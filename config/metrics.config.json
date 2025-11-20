@@ -149,7 +149,7 @@
       "metric_name": ["This week deposit userwise fiat amount", "This week deposit userwise fiat transaction"],
       "record_count": 1,
       "columns": ["user_id", "email", "first_name", "last_name", "year", "week_number", "week_label", "total_completed_amount", "total_transactions"],
-      "order_by_column": "year_week",
+      "order_by_column": "week_number",
       "order_by": "desc"
     },
     {
