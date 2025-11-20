@@ -489,8 +489,41 @@
       "table_name": "total_game_play_pool_amount_daily",
       "metric_name": ["Today game play pool amount"],
       "record_count": 1,
-      "columns": ["date_","coin_bet_amount", "total_sessions"],
+      "columns": ["date_", "coin_bet_amount", "total_sessions"],
       "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    ,
+    {
+      "table_name": "total_game_play_comission_cumulative",
+      "metric_name": ["Total game play commission"],
+      "record_count": 1,
+      "columns": ["date_", "summary_date", "base_amount_100pct", "developer_share_50pct", "tax_18pct", "remainder_you_keep_32pct"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_game_play_comission_daily",
+      "metric_name": ["Today game play commission"],
+      "record_count": 1,
+      "columns": ["date_", "base_amount_100pct", "developer_share_50pct", "tax_18pct", "remainder_you_keep_32pct"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_game_play_comission_weekly",
+      "metric_name": ["This week game play commission"],
+      "record_count": 1,
+      "columns": ["year_week", "week_start_date", "week_end_date", "base_amount_100pct", "developer_share_50pct", "tax_18pct", "remainder_you_keep_32pct"],
+      "order_by_column": "year_week",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_game_play_comission_monthly",
+      "metric_name": ["This month game play commission"],
+      "record_count": 1,
+      "columns": ["month_", "base_amount_100pct", "developer_share_50pct", "tax_18pct", "remainder_you_keep_32pct"],
+      "order_by_column": "month_",
       "order_by": "desc"
     }
   ],
