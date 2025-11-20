@@ -475,8 +475,6 @@
       "order_by_column": "session_date",
       "order_by": "desc"
     },
-    ,
-    //
     {
       "table_name": "total_game_play_pool_amount_cumulative",
       "metric_name": ["Total game play pool amount"],
@@ -557,7 +555,6 @@
       "order_by_column": "month_",
       "order_by": "desc"
     },
-    ,
     {
       "table_name": "old_AI_matches_cumulative",
       "metric_name": ["Total old AI matches"],
@@ -587,6 +584,38 @@
       "metric_name": ["This month old AI matches"],
       "record_count": 1,
       "columns": ["year_", "month_number", "month_name", "total_ai_matches", "total_player_wins", "total_player_losses", "total_spent_in_usd"],
+      "order_by_column": "month_number",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "wallet_balance_cumulative",
+      "metric_name": ["Total wallet balances"],
+      "record_count": 1,
+      "columns": ["email", "first_name", "last_name", "date_", "total_balance", "total_hold", "available_balance"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "wallet_balance_daily",
+      "metric_name": ["Today wallet balances"],
+      "record_count": 1,
+      "columns": ["user_id", "email", "first_name", "last_name", "date_", "total_balance", "total_hold", "available_balance"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "wallet_balance_weekly",
+      "metric_name": ["This week wallet balances"],
+      "record_count": 1,
+      "columns": ["user_id", "email", "first_name", "last_name", "year_", "week_number", "week_label", "total_balance", "total_hold", "available_balance"],
+      "order_by_column": "week_number",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "wallet_balance_monthly",
+      "metric_name": ["This month wallet balances"],
+      "record_count": 1,
+      "columns": ["user_id", "email", "first_name", "last_name", "month_", "total_balance", "total_hold", "available_balance"],
       "order_by_column": "month_",
       "order_by": "desc"
     }
@@ -594,9 +623,9 @@
   "Tables": [
     {
       "table_name": "wallet_balance_cumulative",
-      "metric_name": ["Top 50 Wallet Balance Holders"],
+      "metric_name": ["Top 50 Wallet Balance Holdersss"],
       "record_count": 50,
-      "columns": ["first_name", "wallet_address", "total_balance", "total_hold"],
+      "columns": ["email", "first_name", "last_name", "date_", "total_balance", "total_hold", "available_balance"],
       "order_by_column": "total_balance",
       "order_by": "desc"
     }
@@ -606,7 +635,7 @@
       "table_name": "wallet_balance_cumulative",
       "metric_name": ["Top 50 Wallet Balance Holders"],
       "record_count": 50,
-      "columns": ["first_name", "wallet_address", "total_balance", "total_hold"],
+      "columns": ["email", "first_name", "last_name", "date_", "total_balance", "total_hold", "available_balance"],
       "order_by_column": "total_balance",
       "order_by": "desc"
     }
