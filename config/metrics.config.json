@@ -197,7 +197,7 @@
       "metric_name": ["Total deposit userwise crypto amount", "Total deposit userwise crypto transaction"],
       "record_count": 1,
       "columns": ["user_id", "email", "first_name", "last_name", "total_completed_amount", "total_transactions"],
-      "order_by_column": "date_",
+      "order_by_column": "user_id",
       "order_by": "desc"
     },
     {
@@ -229,6 +229,39 @@
       "metric_name": ["Total deposit userwise amount", "Total deposit userwise transaction"],
       "record_count": 1,
       "columns": ["user_id", "email", "first_name", "last_name", "total_completed_amount", "total_transactions"],
+      "order_by_column": "user_id",
+      "order_by": "desc"
+    },
+    
+    {
+      "table_name": "total_withdrawal_fiat_daily",
+      "metric_name": ["Today withdrawal fiat amount", "Today withdrawal fiat transaction"],
+      "record_count": 1,
+      "columns": ["date_", "total_completed_amount", "total_transactions"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_withdrawal_fiat_weekly",
+      "metric_name": ["This week withdrawal fiat amount", "This week withdrawal fiat transaction"],
+      "record_count": 1,
+      "columns": ["year_week", "week_start_date", "week_end_date", "total_completed_amount", "total_transactions"],
+      "order_by_column": "year_week",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_withdrawal_fiat_monthly",
+      "metric_name": ["This month withdrawal fiat amount", "This month withdrawal fiat transaction"],
+      "record_count": 1,
+      "columns": ["month_", "total_completed_amount", "total_transactions"],
+      "order_by_column": "month_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_withdrawal_fiat_cumulative",
+      "metric_name": ["Total withdrawal fiat amount", "Total withdrawal fiat transaction"],
+      "record_count": 1,
+      "columns": ["date_", "total_completed_amount", "total_transactions"],
       "order_by_column": "date_",
       "order_by": "desc"
     }
