@@ -18,6 +18,8 @@ const config = loadMetricConfig();
 
 function buildQuery(block) {
   let columns = block.columns.join(", ");
+  let distinct_col = block.distinct_col;
+
   return `
     SELECT ${columns}
     FROM ${block.table_name}
@@ -71,6 +73,28 @@ app.get("/api/cards", async (req, res) => {
   }
 });
 
+function buildQuery_cumulative(block) {
+  let columns = block.columns.join(", ");
+  let distinct_col = block.distinct_col;
+
+  return `
+    WITH ranked AS (
+      SELECT 
+        ${columns},
+        ROW_NUMBER() OVER (
+          PARTITION BY ${distinct_col}
+          ORDER BY ${block.order_by_column} ${block.order_by}
+        ) AS rn
+      FROM ${block.table_name}
+    )
+    SELECT ${columns}
+    FROM ranked
+    WHERE rn = 1
+    ORDER BY ${block.order_by_column} ${block.order_by}
+    LIMIT ${block.record_count};
+  `;
+}
+
 app.get("/api/tables", async (req, res) => {
   try {
     const results = [];
@@ -80,7 +104,12 @@ app.get("/api/tables", async (req, res) => {
     if (table_name == undefined) {
       //means we need all
       for (const card of config.Tables) {
-        const sql = buildQuery(card);
+        let sql = "";
+        if (card.is_cumulative == 1) {
+          sql = buildQuery_cumulative(card);
+        } else {
+          sql = buildQuery(card);
+        }
         const [rows] = await pool.query(sql);
 
         results.push({
@@ -94,16 +123,13 @@ app.get("/api/tables", async (req, res) => {
       //means we need specific table
       for (const card of config.Tables) {
         if (card.table_name == table_name) {
-          const sql = buildQuery(card);
-          // const [rows] = await pool.query(sql);
-          const [rows] = [
-            {
-              first_name: "John",
-              wallet_address: "sdfsdfsdf",
-              total_balance: 20,
-              total_hold: 2,
-            },
-          ];
+          let sql = "";
+          if (card.is_cumulative == 1) {
+            sql = buildQuery_cumulative(card);
+          } else {
+            sql = buildQuery(card);
+          }
+          const [rows] = await pool.query(sql);
           results.push({
             metric_name: card.metric_name,
             sql,
@@ -124,7 +150,7 @@ app.get("/api/tables", async (req, res) => {
 app.get("/api/charts", async (req, res) => {
   try {
     const results = [];
-    const { table_name, chart_type } = req.query;
+    const { table_name } = req.query;
     console.log(table_name);
 
     if (table_name == undefined) {
@@ -149,6 +175,7 @@ app.get("/api/charts", async (req, res) => {
 
           results.push({
             metric_name: card.metric_name,
+            chart_type: card.chart_type,
             sql,
             field_names: card.columns,
             data: rows,
