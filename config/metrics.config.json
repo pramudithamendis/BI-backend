@@ -426,7 +426,6 @@
       "order_by_column": "date_",
       "order_by": "desc"
     },
-    //
     {
       "table_name": "total_game_plays_daily",
       "metric_name": ["Today game plays"],
@@ -457,6 +456,24 @@
       "record_count": 1,
       "columns": ["date_", "total_sessions"],
       "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    ,
+    //
+    {
+      "table_name": "total_game_plays_without_AI_and_Train_With_AI_cumulative",
+      "metric_name": ["Total game plays without AI and train with AI"],
+      "record_count": 1,
+      "columns": ["date_", "total_sessions"],
+      "order_by_column": "date_",
+      "order_by": "desc"
+    },
+    {
+      "table_name": "total_game_plays_without_AI_and_Train_With_AI_daily",
+      "metric_name": ["Today game plays without AI and train with AI"],
+      "record_count": 1,
+      "columns": ["session_date", "total_sessions"],
+      "order_by_column": "session_date",
       "order_by": "desc"
     }
   ],
